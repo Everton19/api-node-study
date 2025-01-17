@@ -45,14 +45,20 @@ app.route('/:id').delete((req, res) => {
     return;
 });
 
-//Quey Param
+//Query Param
 
 // app.route('/').get((req, res) => {
 //     res.send(req.query.name);
 //     return;
 // })
 
-app.route('/:param').get((req, res) => {
-    res.send(req.params.param);
-    return;
-})
+// app.route('/:param').get((req, res) => {
+//     res.send(req.params.param);
+//     return;
+// })
+
+//Body Param
+app.route('/teste-post').post((req, res) => {
+    const {teste, array} = req.body;
+    res.send(`${teste} '+' ${array}`);
+});
