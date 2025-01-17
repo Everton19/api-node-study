@@ -64,6 +64,10 @@ app.route('/:id').delete((req, res) => {
 // });
 
 //Route Param
-app.route('/:nome').get((req, res) => {
-    res.send(req.params.nome);
+// app.route('/:nome').get((req, res) => {
+//     res.send(req.params.nome);
+// })
+
+app.route('/').get((req, res) => {
+    res.send(req.query.name);
 })
