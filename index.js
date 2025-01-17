@@ -10,7 +10,7 @@ app.listen(3000, () => {
 
 app.use(express.json());
 
-app.route('/').get((req, res) => res.send(product));
+// app.route('/').get((req, res) => res.send(product));
 
 app.route('/sobre').get((req, res) => res.send('Hello World do sobre!'));
 
@@ -44,3 +44,15 @@ app.route('/:id').delete((req, res) => {
     res.send(`Produto ${name} deletado com sucesso`);
     return;
 });
+
+//Quey Param
+
+// app.route('/').get((req, res) => {
+//     res.send(req.query.name);
+//     return;
+// })
+
+app.route('/:param').get((req, res) => {
+    res.send(req.params.param);
+    return;
+})
