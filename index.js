@@ -58,7 +58,12 @@ app.route('/:id').delete((req, res) => {
 // })
 
 //Body Param
-app.route('/teste-post').post((req, res) => {
-    const {teste, array} = req.body;
-    res.send(`${teste} '+' ${array}`);
-});
+// app.route('/teste-post').post((req, res) => {
+//     const {teste, array} = req.body;
+//     res.send(`${teste} '+' ${array}`);
+// });
+
+//Route Param
+app.route('/:nome').get((req, res) => {
+    res.send(req.params.nome);
+})
